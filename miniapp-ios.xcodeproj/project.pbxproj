@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920407B222D30FEE000CC6AC /* MiniappEventInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 920407B122D30FEE000CC6AC /* MiniappEventInstance.m */; };
 		921C453322CEEA7E0000BDEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C453222CEEA7E0000BDEA /* AppDelegate.m */; };
 		921C453622CEEA7E0000BDEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C453522CEEA7E0000BDEA /* ViewController.m */; };
 		921C453922CEEA7E0000BDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921C453722CEEA7E0000BDEA /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		083AC3C09D7819C0732AEF61 /* libPods-miniapp-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-miniapp-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113546BC1C1B11C87133502A /* Pods-miniapp-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniapp-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		920407B022D30FD8000CC6AC /* MiniappEventInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappEventInstance.h; sourceTree = "<group>"; };
+		920407B122D30FEE000CC6AC /* MiniappEventInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappEventInstance.m; sourceTree = "<group>"; };
 		921C452E22CEEA7E0000BDEA /* miniapp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miniapp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		921C453122CEEA7E0000BDEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		921C453222CEEA7E0000BDEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,7 +37,7 @@
 		921C454022CEEA800000BDEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		921C454822CEEFC80000BDEA /* MiniappViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniappViewController.m; sourceTree = "<group>"; };
 		921C454922CEEFC80000BDEA /* MiniappViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniappViewController.h; sourceTree = "<group>"; };
-		921C454B22CF23520000BDEA /* MiniappEventDelegte.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappEventDelegte.h; sourceTree = "<group>"; };
+		921C454B22CF23520000BDEA /* MiniappEventDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappEventDelegate.h; sourceTree = "<group>"; };
 		921C454C22CF23C70000BDEA /* MiniappJumpUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappJumpUtil.h; sourceTree = "<group>"; };
 		921C455022CF240A0000BDEA /* MiniappJumpUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappJumpUtil.m; sourceTree = "<group>"; };
 		921C455222CF2C7B0000BDEA /* DemoEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoEvent.m; sourceTree = "<group>"; };
@@ -118,11 +121,13 @@
 				921C455522CF42F80000BDEA /* MiniappStructModel.m */,
 				921C454922CEEFC80000BDEA /* MiniappViewController.h */,
 				921C454822CEEFC80000BDEA /* MiniappViewController.m */,
-				921C454B22CF23520000BDEA /* MiniappEventDelegte.h */,
+				921C454B22CF23520000BDEA /* MiniappEventDelegate.h */,
 				921C454C22CF23C70000BDEA /* MiniappJumpUtil.h */,
 				921C455022CF240A0000BDEA /* MiniappJumpUtil.m */,
 				921C455822CF559B0000BDEA /* MiniappManagerBridge.h */,
 				921C455922CF559B0000BDEA /* MiniappManagerBridge.m */,
+				920407B022D30FD8000CC6AC /* MiniappEventInstance.h */,
+				920407B122D30FEE000CC6AC /* MiniappEventInstance.m */,
 			);
 			path = Miniapp;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920407B222D30FEE000CC6AC /* MiniappEventInstance.m in Sources */,
 				921C455722CF42F80000BDEA /* MiniappStructModel.m in Sources */,
 				921C453622CEEA7E0000BDEA /* ViewController.m in Sources */,
 				921C454122CEEA800000BDEA /* main.m in Sources */,

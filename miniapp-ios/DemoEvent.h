@@ -9,10 +9,10 @@
 #ifndef DemoEvent_h
 #define DemoEvent_h
 #import <Foundation/Foundation.h>
-#import "Miniapp/MiniappEventDelegte.h"
+#import "Miniapp/MiniappEventDelegate.h"
 
-@interface DemoEvent : NSObject<MiniappEventDelegte>
-    
-    @end
+@interface DemoEvent : NSObject<MiniappEventDelegate>
+    + (instancetype)sharedInstance;
+@end
 
 #endif /* DemoEvent_h */

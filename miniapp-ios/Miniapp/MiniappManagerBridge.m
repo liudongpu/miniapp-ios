@@ -7,6 +7,9 @@
 //
 
 #import "MiniappManagerBridge.h"
+
+#import "MiniappEventInstance.h"
+
 @implementation MiniappManagerBridge : NSObject
 RCT_EXPORT_MODULE();
 
@@ -93,6 +96,7 @@ RCT_REMAP_METHOD(sendNativePromise,type:(NSString *)sType param:(NSString *)sJso
              case 0:
         {
             //dic=[NSDictionary dictionaryWithObjectsAndKeys:ICK_TOKEN,@"token", nil];
+            dic=@{@"token":[[MiniappEventInstance sharedInstance].eventDelegate upNativeUserInfo]};
         }
             
             break;

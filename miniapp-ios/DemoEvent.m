@@ -7,13 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Miniapp/MiniappEventDelegte.h"
 #import "DemoEvent.h"
 @implementation  DemoEvent
 
++ (instancetype)sharedInstance{
+    static DemoEvent * abc;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        abc = [[DemoEvent alloc] init];
+    });
+    return abc;
+}
+
+
+
     
     -(NSString*) upNativeUserInfo{
-        return @"abc";
+        return @"abcdefghijklmn";
     }
     
     -(NSString*) upRequestUrl{

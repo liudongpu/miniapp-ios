@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "Miniapp/MiniappJumpUtil.h"
 #import "DemoEvent.h"
-
+#import "MiniappEventInstance.h"
 @interface ViewController ()
 
 @end
@@ -28,9 +28,12 @@
 - (IBAction)jumpUrl:(id)sender {
 
     
-    MiniappJumpUtil *miniJump=[MiniappJumpUtil new];
+   
+    [MiniappEventInstance  sharedInstance].eventDelegate =[DemoEvent sharedInstance];
     
-    [miniJump jumpUrl:@"icome-miniapp://demo_one.app?a=1" withView:self withDelegate:[DemoEvent new]];
+    
+     MiniappJumpUtil *miniJump=[MiniappJumpUtil new];
+    [miniJump jumpUrl:@"icome-miniapp://demo_one.app?a=1" withView:self ];
     
 }
     

@@ -6,10 +6,10 @@
 //  Copyright © 2019 uhutu. All rights reserved.
 //
 
-#ifndef MiniappEventDelegte_h
-#define MiniappEventDelegte_h
+#ifndef MiniappEventDelegate_h
+#define MiniappEventDelegate_h
 
-@protocol MiniappEventDelegte <NSObject>
+@protocol MiniappEventDelegate <NSObject>
 
     @required
     -(NSString*) upNativeUserInfo;

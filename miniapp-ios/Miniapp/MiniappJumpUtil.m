@@ -14,7 +14,7 @@
 #import <AFURLSessionManager.h>
 #import <AFHTTPSessionManager.h>
 #import "MiniappStructModel.h"
-
+#import "MiniappEventInstance.h"
 
 @interface MiniappJumpUtil ()
 
@@ -25,10 +25,10 @@
 
     
     
-    -(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view withDelegate: (id<MiniappEventDelegte>)miniappEventDelegte {
+    -(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view  {
        
        
-        [self targetMiniapp:sJumpUrl withView:view withDelegate:miniappEventDelegte];
+        [self targetMiniapp:sJumpUrl withView:view ];
         
        //[self jumpForDebugMiniapp:sJumpUrl withView:view];
     }
@@ -65,7 +65,8 @@
     }
     
     
-    -(void) targetMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view withDelegate: (id<MiniappEventDelegte>)miniappEventDelegte {
+    -(void) targetMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view  {
+        
         
         
         NSRange rStartIndex = [sJumpUrl rangeOfString:@":"];
@@ -79,7 +80,7 @@
         
         NSString *sId= [sAfter substringToIndex:rAppIndex.location];
         
-        NSString *sRequestUrl= [NSString stringWithFormat:[miniappEventDelegte upRequestUrl],sId];
+        NSString *sRequestUrl= [NSString stringWithFormat:[[MiniappEventInstance sharedInstance].eventDelegate upRequestUrl],sId];
         
         
         NSString *escapedString = [sJumpUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
@@ -94,7 +95,7 @@
         
         
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        manager.requestSerializer.timeoutInterval = 60.0f;
+        //manager.requestSerializer.timeoutInterval = 60.0f;
         //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",nil];
         
         [manager GET:sRequestUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -106,34 +107,26 @@
             //iOS自带解析类NSJSONSerialization从response中解析出数据放到字典中
             NSDictionary *weatherDic = responseObject;
             
+            MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
+            
            
             
             NSString *sPathRoot=[NSHomeDirectory() stringByAppendingString:@"/icome_miniapp/"];
             
             
-            NSString *sPathBundle=[sPathRoot stringByAppendingString:@"bundle/"];
-            
-            NSString *sJsonFolder=[weatherDic objectForKey:@"folder" ];
-            NSString *sJsonFile=[weatherDic objectForKey:@"file"  ];
-            NSString *sJsonUrl=[weatherDic objectForKey:@"url" ];
-            
-            NSString *sPathFolder=[[sPathBundle stringByAppendingString:sJsonFolder] stringByAppendingString:@"/"];
-            
-            NSString *sFileBundle=[sPathFolder stringByAppendingString:sJsonFile];
             
             
+            [initModel setPathBundle:[sPathRoot stringByAppendingString:@"bundle/"]];
+            
+            NSString *sPathFolder=[[initModel.pathBundle stringByAppendingString:[weatherDic objectForKey:@"folder" ]] stringByAppendingString:@"/"];
             
             
-            
-            
-            MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
-            
-            [initModel setBundlePath:sFileBundle];
+            [initModel setBundlePath:[sPathFolder stringByAppendingString:[weatherDic objectForKey:@"file"  ]]];
             
             [initModel setPathZip:[sPathRoot stringByAppendingString:@"zip/"]];
-             [initModel setPathBundle:sPathBundle];
+            
             [initModel setPathFolder:sPathFolder];
-            [initModel setJsonUrl:sJsonUrl];
+            [initModel setJsonUrl:[weatherDic objectForKey:@"url" ]];
             
             [initModel setBundleView:[weatherDic objectForKey:@"view" ]];
             
@@ -148,7 +141,7 @@
             [initModel setMiniInfo:sMiniInfo];
             
             
-            [self check:initModel withView:view];
+            [self checkExec:initModel withView:view];
             
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -170,7 +163,13 @@
 
 
 
--(void)check:(MiniappStructModel*) initModel withView:(UIViewController *)view{
+/**
+ 检查然后执行模型
+
+ @param initModel <#initModel description#>
+ @param view <#view description#>
+ */
+-(void)checkExec:(MiniappStructModel*) initModel withView:(UIViewController *)view{
     
     
      NSFileManager *fm = [NSFileManager defaultManager];
