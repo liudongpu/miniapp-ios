@@ -22,8 +22,12 @@
 
 
     
-    -(NSString*) upNativeUserInfo{
-        return @"abcdefghijklmn";
+    -(MiniappModelUser*) upNativeUserInfo{
+        
+        MiniappModelUser *user=[MiniappModelUser new];
+        user.token=@"abcdefghijklmn";
+        
+        return user;
     }
     
     -(NSString*) upRequestUrl{

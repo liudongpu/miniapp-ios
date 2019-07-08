@@ -22,7 +22,7 @@ RCT_EXPORT_METHOD(sendNativeEvent:(NSString *)sType param:(NSString *)sJson opti
     
     
     
-    RCTLogInfo(@"Pretending to create an event:%@ param:%@ option:%@", sType, sJson,sOption);
+    NSLog(@"Pretending to create an event:%@ param:%@ option:%@", sType, sJson,sOption);
     
     
     
@@ -96,7 +96,8 @@ RCT_REMAP_METHOD(sendNativePromise,type:(NSString *)sType param:(NSString *)sJso
              case 0:
         {
             //dic=[NSDictionary dictionaryWithObjectsAndKeys:ICK_TOKEN,@"token", nil];
-            dic=@{@"token":[[MiniappEventInstance sharedInstance].eventDelegate upNativeUserInfo]};
+            //dic=@{@"token":[[MiniappEventInstance sharedInstance].eventDelegate upNativeUserInfo]};
+            dic=[[MiniappEventInstance sharedInstance].eventDelegate upNativeUserInfo].toDictionary;
         }
             
             break;
@@ -110,7 +111,7 @@ RCT_REMAP_METHOD(sendNativePromise,type:(NSString *)sType param:(NSString *)sJso
         }
             break;
         default:{
-            dic=[NSDictionary dictionaryWithObjectsAndKeys:@"",@"",nil];
+            dic=@{@"":@""};
         }
             break;
     }
