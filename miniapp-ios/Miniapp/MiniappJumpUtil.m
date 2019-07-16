@@ -23,156 +23,156 @@
 
 @implementation MiniappJumpUtil
 
+
+
+-(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view  {
     
     
-    -(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view  {
-       
-       
-        [self targetMiniapp:sJumpUrl withView:view ];
+    [self targetMiniapp:sJumpUrl withView:view ];
+    
+    //[self jumpForDebugMiniapp:sJumpUrl withView:view];
+}
+
+
+-(void) jumpForDebugMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view {
+    
+    MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
+    
+    [initModel setBundlePath:@""];
+    
+    [initModel setBundleView:@"MiniappPoject"];
+    [initModel setEnvUrl:sJumpUrl];
+    [initModel setEnvName:@"alpha"];
+    [initModel setMiniInfo:@"{\"id\":\"\",\"code\":\"0\",\"version\":\"0.0.0\"}"];
+    
+    
+    [self openMiniapp:initModel withView:view];
+    
+    
+    
+    
+}
+
+
+
+-(void) openMiniapp:(MiniappStructModel*) initModel withView:(UIViewController *)view{
+    MiniappViewController *H5vc = [[MiniappViewController alloc] init];
+    //view.navigationController.navigationBar.hidden = YES;
+    [H5vc initParam:initModel];
+    //[view pushViewController:H5vc animated:NO];
+    
+    [view.navigationController pushViewController:H5vc animated:YES]; //跳转到下一页面
+}
+
+
+-(void) targetMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view  {
+    
+    
+    
+    NSRange rStartIndex = [sJumpUrl rangeOfString:@":"];
+    
+    
+    NSString *sAfter=[sJumpUrl substringFromIndex:rStartIndex.location+3];
+    
+    
+    
+    NSRange rAppIndex=[sAfter rangeOfString:@".app"];
+    
+    NSString *sId= [sAfter substringToIndex:rAppIndex.location];
+    
+    NSString *sRequestUrl= [NSString stringWithFormat:[[MiniappEventInstance sharedInstance].eventDelegate upRequestUrl],sId];
+    
+    
+    NSString *escapedString = [sJumpUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    
+    
+    sRequestUrl=[[sRequestUrl stringByAppendingString:@"?system_source="] stringByAppendingString:escapedString];
+    
+    
+    
+    //加载一个NSURL对象
+    // NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:sRequestUrl]];
+    
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //manager.requestSerializer.timeoutInterval = 60.0f;
+    //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",nil];
+    
+    [manager GET:sRequestUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        NSLog(@"%@", downloadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
         
-       //[self jumpForDebugMiniapp:sJumpUrl withView:view];
-    }
-    
-    
-    -(void) jumpForDebugMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view {
+        
+        //iOS自带解析类NSJSONSerialization从response中解析出数据放到字典中
+        NSDictionary *weatherDic = responseObject;
         
         MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
         
-        [initModel setBundlePath:@""];
         
-        [initModel setBundleView:@"MiniappPoject"];
+        
+        NSString *sPathRoot=[NSHomeDirectory() stringByAppendingString:@"/Documents/icome_miniapp/"];
+        
+        
+        
+        
+        [initModel setPathBundle:[sPathRoot stringByAppendingString:@"bundle/"]];
+        
+        NSString *sPathFolder=[[initModel.pathBundle stringByAppendingString:[weatherDic objectForKey:@"folder" ]] stringByAppendingString:@"/"];
+        
+        
+        [initModel setBundlePath:[sPathFolder stringByAppendingString:[weatherDic objectForKey:@"file"  ]]];
+        
+        [initModel setPathZip:[sPathRoot stringByAppendingString:@"zip/"]];
+        
+        [initModel setPathFolder:sPathFolder];
+        [initModel setJsonUrl:[weatherDic objectForKey:@"url" ]];
+        
+        [initModel setBundleView:[weatherDic objectForKey:@"view" ]];
+        
         [initModel setEnvUrl:sJumpUrl];
-        [initModel setEnvName:@"alpha"];
-        [initModel setMiniInfo:@"{\"id\":\"\",\"code\":\"0\",\"version\":\"0.0.0\"}"];
+        [initModel setEnvName:[weatherDic objectForKey:@"env" ]];
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:weatherDic options:0 error:0];
+        
+        NSString *sMiniInfo  =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         
         
-        [self openMiniapp:initModel withView:view];
+        [initModel setMiniInfo:sMiniInfo];
         
         
+        [self checkExec:initModel withView:view];
         
         
-    }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+    
+    
+    //[NSURLSession ];
+    
+    
+    //将请求的url数据放到NSData对象中
+    //NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     
     
-    -(void) openMiniapp:(MiniappStructModel*) initModel withView:(UIViewController *)view{
-        MiniappViewController *H5vc = [[MiniappViewController alloc] init];
-        //view.navigationController.navigationBar.hidden = YES;
-        [H5vc initParam:initModel];
-        //[view pushViewController:H5vc animated:NO];
-        
-        [view.navigationController pushViewController:H5vc animated:YES]; //跳转到下一页面
-    }
     
     
-    -(void) targetMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view  {
-        
-        
-        
-        NSRange rStartIndex = [sJumpUrl rangeOfString:@":"];
-        
-        
-        NSString *sAfter=[sJumpUrl substringFromIndex:rStartIndex.location+3];
-        
-        
-        
-        NSRange rAppIndex=[sAfter rangeOfString:@".app"];
-        
-        NSString *sId= [sAfter substringToIndex:rAppIndex.location];
-        
-        NSString *sRequestUrl= [NSString stringWithFormat:[[MiniappEventInstance sharedInstance].eventDelegate upRequestUrl],sId];
-        
-        
-        NSString *escapedString = [sJumpUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-        
-        
-        sRequestUrl=[[sRequestUrl stringByAppendingString:@"?system_source="] stringByAppendingString:escapedString];
-        
-        
-       
-        //加载一个NSURL对象
-       // NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:sRequestUrl]];
-        
-        
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-        //manager.requestSerializer.timeoutInterval = 60.0f;
-        //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",nil];
-        
-        [manager GET:sRequestUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            NSLog(@"%@", downloadProgress);
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"%@", responseObject);
-            
-            
-            //iOS自带解析类NSJSONSerialization从response中解析出数据放到字典中
-            NSDictionary *weatherDic = responseObject;
-            
-            MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
-            
-           
-            
-            NSString *sPathRoot=[NSHomeDirectory() stringByAppendingString:@"/icome_miniapp/"];
-            
-            
-            
-            
-            [initModel setPathBundle:[sPathRoot stringByAppendingString:@"bundle/"]];
-            
-            NSString *sPathFolder=[[initModel.pathBundle stringByAppendingString:[weatherDic objectForKey:@"folder" ]] stringByAppendingString:@"/"];
-            
-            
-            [initModel setBundlePath:[sPathFolder stringByAppendingString:[weatherDic objectForKey:@"file"  ]]];
-            
-            [initModel setPathZip:[sPathRoot stringByAppendingString:@"zip/"]];
-            
-            [initModel setPathFolder:sPathFolder];
-            [initModel setJsonUrl:[weatherDic objectForKey:@"url" ]];
-            
-            [initModel setBundleView:[weatherDic objectForKey:@"view" ]];
-            
-            [initModel setEnvUrl:sJumpUrl];
-            [initModel setEnvName:[weatherDic objectForKey:@"env" ]];
-            
-            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:weatherDic options:0 error:0];
-
-            NSString *sMiniInfo  =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            
-            
-            [initModel setMiniInfo:sMiniInfo];
-            
-            
-            [self checkExec:initModel withView:view];
-            
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"%@", error);
-        }];
-        
-        
-        //[NSURLSession ];
-        
-        
-        //将请求的url数据放到NSData对象中
-        //NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-        
-        
-        
-        
-        
-    }
+}
 
 
 
 /**
  检查然后执行模型
-
+ 
  @param initModel <#initModel description#>
  @param view <#view description#>
  */
 -(void)checkExec:(MiniappStructModel*) initModel withView:(UIViewController *)view{
     
     
-     NSFileManager *fm = [NSFileManager defaultManager];
+    NSFileManager *fm = [NSFileManager defaultManager];
     
     
     
@@ -287,6 +287,9 @@
                  }
                  */
             }
+            else{
+                NSLog(@"文件不存在");
+            }
             
             
             
@@ -337,5 +340,6 @@
 }
 
 
-    
+
 @end
+
