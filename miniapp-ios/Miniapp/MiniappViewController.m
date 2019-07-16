@@ -30,7 +30,7 @@
 }
     
 - (BOOL)customizedEnabled{
-    return YES;
+    return NO;
 }
     
 - (void)viewDidLoad {
@@ -93,12 +93,12 @@
     
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
+    [self.navigationController setNavigationBarHidden:YES];
 }
     
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.hidden = NO;
+    [self.navigationController setNavigationBarHidden:NO];
 }
     /*
      #pragma mark - Navigation
