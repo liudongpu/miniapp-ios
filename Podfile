@@ -47,4 +47,5 @@ target 'miniapp-ios' do
   pod 'AFNetworking'
   pod 'SSZipArchive'
   pod 'JSONModel'
+  pod 'FDFullscreenPopGesture', '~> 1.1'
 end
