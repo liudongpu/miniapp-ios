@@ -9,7 +9,7 @@
 #import "MiniappViewController.h"
 #import <React/RCTRootView.h>
 #import <React/RCTBundleURLProvider.h>
-
+#import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
 #import "MiniappStructModel.h"
 
 
@@ -34,9 +34,8 @@
 }
     
 - (void)viewDidLoad {
-    
-    
     [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(eventNotice:) name: @"MiniappNotificationEvent" object: nil];
     
