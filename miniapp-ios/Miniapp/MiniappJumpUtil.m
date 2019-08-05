@@ -28,7 +28,14 @@
 -(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view  {
     
     
-    [self targetMiniapp:sJumpUrl withView:view ];
+    if([sJumpUrl isEqualToString:@"debug-miniapp://"]){
+        [self jumpForDebugMiniapp:@"" withView:view];
+    }
+    else{
+        [self targetMiniapp:sJumpUrl withView:view ];
+    }
+    
+    
     
     //[self jumpForDebugMiniapp:sJumpUrl withView:view];
 }
