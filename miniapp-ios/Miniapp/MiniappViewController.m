@@ -60,6 +60,7 @@
     
     
     structModel.userToken=[[MiniappEventInstance  sharedInstance].eventDelegate upNativeUserInfo].token ;
+    
     NSString *structjson=  [structModel toJSONString];
     
     
