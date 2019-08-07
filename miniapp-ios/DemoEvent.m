@@ -25,7 +25,7 @@
     -(MiniappModelUser*) upNativeUserInfo{
         
         MiniappModelUser *user=[MiniappModelUser new];
-        user.token=@"abcdefghijklmn";
+        user.token=@"bf57a0c27712eaf998f82c3e2a8f7eb7";
         
         return user;
     }

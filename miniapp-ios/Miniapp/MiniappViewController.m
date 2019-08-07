@@ -11,7 +11,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
 #import "MiniappStructModel.h"
-
+#import "MiniappEventInstance.h"
 
 
 @interface MiniappViewController ()
@@ -59,8 +59,10 @@
     
     
     
-    
+    structModel.userToken=[[MiniappEventInstance  sharedInstance].eventDelegate upNativeUserInfo].token ;
     NSString *structjson=  [structModel toJSONString];
+    
+    
     
     // Do any additional setup after loading the view.
     //NSLog(@"structjson %@",structjson);
