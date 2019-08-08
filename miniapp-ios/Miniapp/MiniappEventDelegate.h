@@ -11,13 +11,13 @@
 
 @protocol MiniappEventDelegate <NSObject>
 
-    @required
-    -(MiniappModelUser*) upNativeUserInfo;
-    
-    
-    @required
-    -(NSString*) upRequestUrl;
-    
+-(MiniappModelUser*) upNativeUserInfo;
+
+
+-(NSString*) upRequestUrl;
+
+-(void)jumpWtihParam:(NSDictionary *)sJson;
+
 @end
 
 #endif /* MiniappEventDelegte_h */
