@@ -34,5 +34,11 @@
         return @"http://icomeminiapp.srnpr.com/mapps/version/%@/beta_ios.json";
         //return @"http://localhost:8870/build/version/%@/alpha_ios.json";
     }
+
+
+- (void)jumpWtihParam:(NSDictionary *)sJson {
+    
+}
+
     
 @end

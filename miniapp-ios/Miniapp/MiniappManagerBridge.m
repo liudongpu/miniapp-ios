@@ -10,30 +10,18 @@
 
 #import "MiniappEventInstance.h"
 
+
+
 @implementation MiniappManagerBridge : NSObject
 RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(sendNativeEvent:(NSString *)sType param:(NSString *)sJson option:(NSString *)sOption)
 {
-    
-    
-    
-    
-    
-    
-    
     NSLog(@"Pretending to create an event:%@ param:%@ option:%@", sType, sJson,sOption);
-    
-    
-    
     NSArray *aName = [NSArray arrayWithObjects:@"nativeEventBack",@"nativeEventJump",@"nativeEventHidenav",@"nativeEventToast",nil];
     long index = [aName  indexOfObject:sType];
-    
-    
     NSData *jsonData = [sJson dataUsingEncoding:NSUTF8StringEncoding];
-    
     NSError *err;
-    
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                          
                                                         options:NSJSONReadingMutableContainers
@@ -48,30 +36,16 @@ RCT_EXPORT_METHOD(sendNativeEvent:(NSString *)sType param:(NSString *)sJson opti
     else{
         
         switch (index) {
-            case 0:
             case 1:
-            case 2:
-                case 3:
+                [[MiniappEventInstance sharedInstance].eventDelegate jumpWtihParam:dic];
+                break;
+            default:
             {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"MiniappNotificationEvent" object:dic ];
-                
-                
             }
                 break;
-                
         }
-        
     }
-    
-    
-    
-   
-    
-    
-    
-
-    
-    
 }
 
 
