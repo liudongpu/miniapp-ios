@@ -1,10 +1,12 @@
 //
-//  MiniappJumpUtil.m
+//  MiniappDownloadService.m
 //  miniapp-ios
 //
-//  Created by 刘流 on 2019/7/5.
-//  Copyright © 2019 uhutu. All rights reserved.
+//  Created by liufan on 2019/8/23.
+//  Copyright © 2019年 uhutu. All rights reserved.
 //
+
+#import "MiniappDownloadService.h"
 
 #import <Foundation/Foundation.h>
 #import "MiniappJumpUtil.h"
@@ -13,43 +15,31 @@
 #import "SSZipArchive.h"
 #import <AFURLSessionManager.h>
 #import <AFHTTPSessionManager.h>
-#import "MiniappStructModel.h"
+
 #import "MiniappEventInstance.h"
 #import "MiniappViewController.h"
-@interface MiniappJumpUtil ()
+
+@interface MiniappDownloadService ()
 
 @end
 
 
-@implementation MiniappJumpUtil
+@implementation MiniappDownloadService
 
 
 
--(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view  {
+-(void)jumpUrl:(NSString *)sJumpUrl {
     
-    
-    
-   MiniappViewController *miniAppVC = [[MiniappViewController alloc] init];
-   miniAppVC.jumpURL = sJumpUrl;
-   [view.navigationController pushViewController:miniAppVC animated:YES];
-    
-    
-    
-//    
-//    if([sJumpUrl isEqualToString:@"debug-miniapp://"]){
-//        [self jumpForDebugMiniapp:@"" withView:view];
-//    }
-//    else{
-//        [self targetMiniapp:sJumpUrl withView:view ];
-//    }
-//    
-//    
-    
-    //[self jumpForDebugMiniapp:sJumpUrl withView:view];
+    if([sJumpUrl isEqualToString:@"debug-miniapp://"]){
+        [self jumpForDebugMiniapp:@""];
+    }
+    else{
+        [self targetMiniapp:sJumpUrl];
+    }
 }
 
 
--(void) jumpForDebugMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view {
+-(void) jumpForDebugMiniapp:(NSString *)sJumpUrl {
     
     MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
     
@@ -61,21 +51,18 @@
     [initModel setMiniInfo:@"{\"id\":\"\",\"code\":\"0\",\"version\":\"0.0.0\"}"];
     
     
-    [self openMiniapp:initModel withView:view];
-    
-    
-    
-    
+    [self openMiniapp:initModel];
+
 }
 
 
 
--(void) openMiniapp:(MiniappStructModel*) initModel withView:(UIViewController *)view{
-    
+-(void) openMiniapp:(MiniappStructModel*) initModel {
+    [self.delegate finishData:initModel];
 }
 
 
--(void) targetMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view  {
+-(void) targetMiniapp:(NSString *)sJumpUrl {
     
     
     
@@ -151,7 +138,7 @@
         [initModel setMiniInfo:sMiniInfo];
         
         
-        [self checkExec:initModel withView:view];
+        [self checkExec:initModel];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -177,9 +164,8 @@
  检查然后执行模型
  
  @param initModel <#initModel description#>
- @param view <#view description#>
  */
--(void)checkExec:(MiniappStructModel*) initModel withView:(UIViewController *)view{
+-(void)checkExec:(MiniappStructModel*) initModel{
     
     
     NSFileManager *fm = [NSFileManager defaultManager];
@@ -188,7 +174,7 @@
     
     NSLog(@"file bundle %@",initModel.bundlePath);
     if ([fm fileExistsAtPath:initModel.bundlePath]) {
-        [self openMiniapp:initModel withView:view];
+        [self openMiniapp:initModel ];
         
     }
     else{
@@ -279,7 +265,7 @@
                     NSLog(@"completionHandler:%@, , succeeded:%d, error:%@", path, succeeded, error);
                     
                     if(succeeded==1){
-                        [self openMiniapp:initModel withView:view];
+                        [self openMiniapp:initModel ];
                     }
                     
                 }];
