@@ -79,6 +79,7 @@
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
     self.view.backgroundColor = [UIColor whiteColor];
+    [self showLoading:YES];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:(UIBarButtonItemStyleDone) target:self action:nil];
 }
     
@@ -121,8 +122,7 @@
 
 
 - (void)showLoading:(BOOL)show{
-    
-    return;
+
     UIWindow *view = [UIApplication sharedApplication].keyWindow;
     NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
     MBProgressHUD *hudView = nil;
