@@ -107,7 +107,7 @@
             self.navigationController.navigationBar.hidden = YES;
             
         }else if([sEventType isEqualToString:@"nativeEventToast"]){
-            [self showMessage:dic[@"msg"]];
+            [self showMessage:dic[@"messageInfo"]];
         }else if([sEventType isEqualToString:@"nativeEventLoadClose"]){
             [self showLoading:NO];
         }else if([sEventType isEqualToString:@"nativeEventLoadOpen"]){
@@ -142,6 +142,7 @@
     UIView *view = [[UIApplication sharedApplication].windows lastObject];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = message;
+    hud.mode = MBProgressHUDModeText;
     hud.removeFromSuperViewOnHide = YES;
     hud.backgroundView.color = [UIColor clearColor];
     [hud hideAnimated:YES afterDelay:1.5];
