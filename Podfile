@@ -48,4 +48,5 @@ target 'miniapp-ios' do
   pod 'SSZipArchive'
   pod 'JSONModel'
   pod 'FDFullscreenPopGesture', '~> 1.1'
+  pod 'MBProgressHUD'
 end

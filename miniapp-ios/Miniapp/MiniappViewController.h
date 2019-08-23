@@ -13,6 +13,7 @@
 #import "MiniappStructModel.h"
 @interface MiniappViewController : UIViewController
 
+@property (nonatomic,strong) NSString *jumpURL;
 -(void) initParam:(MiniappStructModel *)initStruct;
 @end
 
