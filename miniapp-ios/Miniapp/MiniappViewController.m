@@ -64,18 +64,21 @@
                              launchOptions: nil];
     self.view=rootView;
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (downloadService == nil) {
+        downloadService = [[MiniappDownloadService alloc] init];
+        downloadService.delegate = self;
+        [downloadService jumpUrl:self.jumpURL];
+    }
+}
     
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
-    downloadService = [[MiniappDownloadService alloc] init];
-    downloadService.delegate = self;
-    [downloadService jumpUrl:self.jumpURL];
-    
-    [self showLoading:YES];
-    
     self.view.backgroundColor = [UIColor whiteColor];
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:(UIBarButtonItemStyleDone) target:self action:nil];
 }
     
@@ -119,6 +122,7 @@
 
 - (void)showLoading:(BOOL)show{
     
+    return;
     UIWindow *view = [UIApplication sharedApplication].keyWindow;
     NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
     MBProgressHUD *hudView = nil;
