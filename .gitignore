@@ -42,3 +42,4 @@ node_modules
 yarn.lock
 package-lock.json
 Pods
+Podfile.lock
