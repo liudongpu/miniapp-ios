@@ -19,7 +19,7 @@
 		921C455722CF42F80000BDEA /* MiniappStructModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C455522CF42F80000BDEA /* MiniappStructModel.m */; };
 		921C455A22CF559C0000BDEA /* MiniappManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C455922CF559B0000BDEA /* MiniappManagerBridge.m */; };
 		92AAEC9C22D3445A003A3D61 /* MiniappModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */; };
-		C26AC1B4230F88C500EADC02 /* MiniappDownloadService.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AC1B3230F88C500EADC02 /* MiniappDownloadService.m */; };
+		C2E3B66323138A4000B913EC /* MiniappHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3B66223138A4000B913EC /* MiniappHUD.m */; };
 		EB1F2D9A076079100FF91F33 /* libPods-miniapp-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 083AC3C09D7819C0732AEF61 /* libPods-miniapp-ios.a */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +51,8 @@
 		92AAEC9A22D33E2C003A3D61 /* MiniappModelUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappModelUser.h; sourceTree = "<group>"; };
 		92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappModelUser.m; sourceTree = "<group>"; };
 		B7C180588D9E009734BC8D63 /* Pods-miniapp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniapp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios.release.xcconfig"; sourceTree = "<group>"; };
-		C26AC1B2230F88C500EADC02 /* MiniappDownloadService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappDownloadService.h; sourceTree = "<group>"; };
-		C26AC1B3230F88C500EADC02 /* MiniappDownloadService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappDownloadService.m; sourceTree = "<group>"; };
+		C2E3B66123138A4000B913EC /* MiniappHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappHUD.h; sourceTree = "<group>"; };
+		C2E3B66223138A4000B913EC /* MiniappHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +132,12 @@
 				920407B122D30FEE000CC6AC /* MiniappEventInstance.m */,
 				921C454C22CF23C70000BDEA /* MiniappJumpUtil.h */,
 				921C455022CF240A0000BDEA /* MiniappJumpUtil.m */,
-				C26AC1B2230F88C500EADC02 /* MiniappDownloadService.h */,
-				C26AC1B3230F88C500EADC02 /* MiniappDownloadService.m */,
 				921C455822CF559B0000BDEA /* MiniappManagerBridge.h */,
 				921C455922CF559B0000BDEA /* MiniappManagerBridge.m */,
 				92AAEC9A22D33E2C003A3D61 /* MiniappModelUser.h */,
 				92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */,
+				C2E3B66123138A4000B913EC /* MiniappHUD.h */,
+				C2E3B66223138A4000B913EC /* MiniappHUD.m */,
 			);
 			path = Miniapp;
 			sourceTree = "<group>";
@@ -251,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C26AC1B4230F88C500EADC02 /* MiniappDownloadService.m in Sources */,
 				920407B222D30FEE000CC6AC /* MiniappEventInstance.m in Sources */,
 				921C455722CF42F80000BDEA /* MiniappStructModel.m in Sources */,
 				921C453622CEEA7E0000BDEA /* ViewController.m in Sources */,
@@ -260,6 +259,7 @@
 				921C453322CEEA7E0000BDEA /* AppDelegate.m in Sources */,
 				921C455322CF2C7B0000BDEA /* DemoEvent.m in Sources */,
 				921C454A22CEEFC80000BDEA /* MiniappViewController.m in Sources */,
+				C2E3B66323138A4000B913EC /* MiniappHUD.m in Sources */,
 				921C455122CF240A0000BDEA /* MiniappJumpUtil.m in Sources */,
 				921C455A22CF559C0000BDEA /* MiniappManagerBridge.m in Sources */,
 			);

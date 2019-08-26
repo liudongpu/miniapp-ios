@@ -30,8 +30,8 @@
     [MiniappEventInstance  sharedInstance].eventDelegate =[DemoEvent sharedInstance];
     
      MiniappJumpUtil *miniJump=[MiniappJumpUtil new];
-    [miniJump jumpUrl:@"icome-miniapp://demo_one.app?a=1" withView:self ];
-//    [miniJump jumpUrl:@"debug-miniapp://" withView:self ];
+//    [miniJump jumpUrl:@"icome-miniapp://demo_one.app?a=1" withView:self ];
+    [miniJump jumpUrl:@"debug-miniapp://" withView:self ];
     
 }
     

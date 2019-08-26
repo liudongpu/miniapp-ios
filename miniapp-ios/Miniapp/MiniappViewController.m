@@ -12,11 +12,9 @@
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
 #import "MiniappStructModel.h"
 #import "MiniappEventInstance.h"
-#import "MiniappDownloadService.h"
-#import "MBProgressHUD.h"
-@interface MiniappViewController ()<MiniappDownloadServiceDelegate> {
-    
-    MiniappDownloadService *downloadService;
+#import "MiniappHUD.h"
+
+@interface MiniappViewController () {
     NSDictionary* dPrivateDict;
     MiniappStructModel* structModel;
 }
@@ -32,9 +30,13 @@
     return NO;
 }
 
-- (void)finishData:(MiniappStructModel *)model {
-
-    [self initParam:model];
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+    
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(eventNotice:) name: @"MiniappNotificationEvent" object: nil];
     
     NSString *sBundleUrl=[structModel bundlePath];
@@ -50,7 +52,7 @@
     structModel.userToken=[[MiniappEventInstance  sharedInstance].eventDelegate upNativeUserInfo].token ;
     
     NSString *structjson=  [structModel toJSONString];
-
+    
     // Do any additional setup after loading the view.
     //NSLog(@"structjson %@",structjson);
     
@@ -62,25 +64,11 @@
        @"initapp" : structjson
        }
                              launchOptions: nil];
-    self.view=rootView;
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
     
-    if (downloadService == nil) {
-        downloadService = [[MiniappDownloadService alloc] init];
-        downloadService.delegate = self;
-        [downloadService jumpUrl:self.jumpURL];
-    }
-}
     
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.fd_prefersNavigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self showLoading:YES];
+    self.view = rootView;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:(UIBarButtonItemStyleDone) target:self action:nil];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
     
 - (void)viewWillAppear:(BOOL)animated{
@@ -104,53 +92,25 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if([sEventType isEqualToString:@"nativeEventBack"]){
-            [self.navigationController popViewControllerAnimated:NO];
+            [self.navigationController popViewControllerAnimated:YES];
             
         }else if([sEventType isEqualToString:@"nativeEventHidenav"]){
             
             self.navigationController.navigationBar.hidden = YES;
             
         }else if([sEventType isEqualToString:@"nativeEventToast"]){
-            [self showMessage:dic[@"messageInfo"]];
+            [MiniappHUD showMessage:dic[@"messageInfo"]];
         }else if([sEventType isEqualToString:@"nativeEventLoadClose"]){
-            [self showLoading:NO];
+            [MiniappHUD showLoading:NO];
         }else if([sEventType isEqualToString:@"nativeEventLoadOpen"]){
-            [self showLoading:YES];
+            [MiniappHUD showLoading:YES];
         }
     });
 }
 
 
-- (void)showLoading:(BOOL)show{
-
-    UIWindow *view = [UIApplication sharedApplication].keyWindow;
-    NSEnumerator *subviewsEnum = [view.subviews reverseObjectEnumerator];
-    MBProgressHUD *hudView = nil;
-    for (UIView *subview in subviewsEnum) {
-        if ([subview isKindOfClass:[MBProgressHUD class]]) {
-             hudView = (MBProgressHUD *)subview;
-            [hudView hideAnimated:YES];
-        }
-    }
-    
-    if (show) {
-        // 快速显示一个提示信息
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-        hud.mode = MBProgressHUDModeIndeterminate;
-        hud.removeFromSuperViewOnHide =  YES;
-    }
-}
 
 
-- (void)showMessage:(NSString *)message {
-    UIView *view = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.label.text = message;
-    hud.mode = MBProgressHUDModeText;
-    hud.removeFromSuperViewOnHide = YES;
-    hud.backgroundView.color = [UIColor clearColor];
-    [hud hideAnimated:YES afterDelay:1.5];
-}
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"MiniappNotificationEvent" object:nil];
