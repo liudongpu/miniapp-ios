@@ -16,7 +16,7 @@
 
 @interface MiniappNoticeBridge : RCTEventEmitter <RCTBridgeModule>
 
-- (void)sendNativeNotice:(NSString *)notification;
+ 
 
 @end
 

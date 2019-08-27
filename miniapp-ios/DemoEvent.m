@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DemoEvent.h"
 
-#import "Miniapp/MiniappNoticeBridge.h"
+#import "Miniapp/MiniappJumpUtil.h"
 
 @implementation  DemoEvent
 
@@ -42,11 +42,11 @@
 - (void)jumpWtihParam:(NSDictionary *)sJson {
     
     
-    MiniappNoticeBridge *bridge=[MiniappNoticeBridge new];
+    MiniappJumpUtil *bridge=[MiniappJumpUtil new];
     
-     
-    
-    [bridge sendNativeNotice:@"fdafdaf"];
+    NSMutableDictionary *dic= [[NSMutableDictionary alloc] init] ;
+    dic[@"aa"] = @"bb";
+    [bridge sendNativeNotice:@"notice_abc" withDic:dic];
     
     
     
