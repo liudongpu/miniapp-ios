@@ -21,6 +21,14 @@
  @param view 视图显示
  */
 -(void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view ;
+
+
+
+
+
+-(void)sendNativeNotice:(NSString *)sListenerName withDic:(NSMutableDictionary *)dic;
+
+
 @end
 
 #endif /* MiniappJumpUtil_h */

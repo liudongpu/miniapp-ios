@@ -19,6 +19,7 @@
 		921C455722CF42F80000BDEA /* MiniappStructModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C455522CF42F80000BDEA /* MiniappStructModel.m */; };
 		921C455A22CF559C0000BDEA /* MiniappManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C455922CF559B0000BDEA /* MiniappManagerBridge.m */; };
 		92AAEC9C22D3445A003A3D61 /* MiniappModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */; };
+		92EB233E2314D86F0052E6EF /* MiniappNoticeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EB233D2314D86F0052E6EF /* MiniappNoticeBridge.m */; };
 		C2E3B66323138A4000B913EC /* MiniappHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3B66223138A4000B913EC /* MiniappHUD.m */; };
 		EB1F2D9A076079100FF91F33 /* libPods-miniapp-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 083AC3C09D7819C0732AEF61 /* libPods-miniapp-ios.a */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,8 @@
 		921C455922CF559B0000BDEA /* MiniappManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniappManagerBridge.m; sourceTree = "<group>"; };
 		92AAEC9A22D33E2C003A3D61 /* MiniappModelUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappModelUser.h; sourceTree = "<group>"; };
 		92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappModelUser.m; sourceTree = "<group>"; };
+		92EB233D2314D86F0052E6EF /* MiniappNoticeBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappNoticeBridge.m; sourceTree = "<group>"; };
+		92EB233F2314D88A0052E6EF /* MiniappNoticeBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappNoticeBridge.h; sourceTree = "<group>"; };
 		B7C180588D9E009734BC8D63 /* Pods-miniapp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniapp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios.release.xcconfig"; sourceTree = "<group>"; };
 		C2E3B66123138A4000B913EC /* MiniappHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappHUD.h; sourceTree = "<group>"; };
 		C2E3B66223138A4000B913EC /* MiniappHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappHUD.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */,
 				C2E3B66123138A4000B913EC /* MiniappHUD.h */,
 				C2E3B66223138A4000B913EC /* MiniappHUD.m */,
+				92EB233D2314D86F0052E6EF /* MiniappNoticeBridge.m */,
+				92EB233F2314D88A0052E6EF /* MiniappNoticeBridge.h */,
 			);
 			path = Miniapp;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				921C455322CF2C7B0000BDEA /* DemoEvent.m in Sources */,
 				921C454A22CEEFC80000BDEA /* MiniappViewController.m in Sources */,
 				C2E3B66323138A4000B913EC /* MiniappHUD.m in Sources */,
+				92EB233E2314D86F0052E6EF /* MiniappNoticeBridge.m in Sources */,
 				921C455122CF240A0000BDEA /* MiniappJumpUtil.m in Sources */,
 				921C455A22CF559C0000BDEA /* MiniappManagerBridge.m in Sources */,
 			);

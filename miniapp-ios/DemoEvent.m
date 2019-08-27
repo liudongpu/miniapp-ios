@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DemoEvent.h"
+
+#import "Miniapp/MiniappJumpUtil.h"
+
 @implementation  DemoEvent
 
 + (instancetype)sharedInstance{
@@ -37,6 +40,15 @@
 
 
 - (void)jumpWtihParam:(NSDictionary *)sJson {
+    
+    
+    MiniappJumpUtil *bridge=[MiniappJumpUtil new];
+    
+    NSMutableDictionary *dic= [[NSMutableDictionary alloc] init] ;
+    dic[@"aa"] = @"bb";
+    [bridge sendNativeNotice:@"notice_abc" withDic:dic];
+    
+    
     
 }
 

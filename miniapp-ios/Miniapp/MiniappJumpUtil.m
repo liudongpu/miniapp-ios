@@ -54,6 +54,18 @@
     }
 }
 
+
+
+-(void)sendNativeNotice:(NSString *)sListenerName withDic:(NSMutableDictionary *)dic{
+    
+    dic[@"miniapp_lisenter_name"]=sListenerName;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MiniappNotificationNotice" object:dic];
+}
+
+
+
+
 - (void)targetMiniapp:(NSString *)sJumpUrl withView:(UIViewController *)view  {
     
     NSRange rStartIndex = [sJumpUrl rangeOfString:@":"];
