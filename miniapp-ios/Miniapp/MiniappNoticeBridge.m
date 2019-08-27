@@ -42,8 +42,15 @@ RCT_EXPORT_MODULE();
 - (void)emitEventInternal:(NSNotification *)notification
 {
     if (hasListeners) {
+        
+        NSError *parseError = nil;
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:notification.object options:NSJSONWritingPrettyPrinted error:&parseError];
+        
+        NSString *sReturn= [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
         [self sendEventWithName:@"MiniappNoticeReminder"
-                       body:notification.object];
+                       body:sReturn];
     }
 }
 
