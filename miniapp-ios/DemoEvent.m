@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DemoEvent.h"
+
+#import "Miniapp/MiniappNoticeBridge.h"
+
 @implementation  DemoEvent
 
 + (instancetype)sharedInstance{
@@ -37,6 +40,15 @@
 
 
 - (void)jumpWtihParam:(NSDictionary *)sJson {
+    
+    
+    MiniappNoticeBridge *bridge=[MiniappNoticeBridge new];
+    
+     
+    
+    [bridge sendNativeNotice:@"fdafdaf"];
+    
+    
     
 }
 
