@@ -31,6 +31,12 @@
     
     MiniappStructModel* initModel=[[MiniappStructModel alloc] init];
     [initModel setBundlePath:@""];
+    //这里特殊判断 如果调试url中存在http链接 则指定请求该http链接
+    if([sJumpUrl containsString:@"http://"]) {
+         [initModel setBundlePath:[sJumpUrl substringFromIndex:16]];
+    }
+    
+    
     [initModel setBundleView:@"MiniappPoject"];
     [initModel setEnvUrl:sJumpUrl];
     [initModel setEnvName:@"alpha"];
@@ -47,8 +53,8 @@
 - (void)jumpUrl:(NSString *)sJumpUrl withView:(UIViewController *)view {
     
     [MiniappHUD showLoading:YES];
-    if([sJumpUrl isEqualToString:@"debug-miniapp://"]) {
-        [self jumpForDebugMiniapp:@"" withView:view];
+    if([sJumpUrl hasPrefix:@"debug-miniapp://"]) {
+        [self jumpForDebugMiniapp:sJumpUrl withView:view];
     } else {
         [self targetMiniapp:sJumpUrl withView:view ];
     }
