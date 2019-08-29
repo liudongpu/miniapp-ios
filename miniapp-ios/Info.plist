@@ -50,6 +50,8 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>antoutline.ttf</string>
+		<string>antfill.ttf</string>
 		<string>MaterialIcons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>EvilIcons.ttf</string>

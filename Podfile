@@ -10,10 +10,10 @@ target 'miniapp-ios' do
   
   #begin 以下是react-native相关依赖#
   
-  flagExist=File::exists?( "../node_modules/versions/0.59.10.md" )
+  flagExist=File::exists?( "../node_modules/versions/0.59.10.a.md" )
   if !flagExist
       system 'rm -rf ../node_modules/'
-      system 'git clone --branch v-0.59.10 https://code.aliyun.com/uhutu-miniapp/miniapp-libs.git ../node_modules/'
+      system 'git clone --branch v-0.59.10.a https://code.aliyun.com/uhutu-miniapp/miniapp-libs.git ../node_modules/'
   end
   # Your 'node_modules' directory is probably in the root of your project,
   # but if not, adjust the `:path` accordingly
