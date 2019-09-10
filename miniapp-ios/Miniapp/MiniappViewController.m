@@ -104,6 +104,10 @@
             [MiniappHUD showLoading:NO];
         }else if([sEventType isEqualToString:@"nativeEventLoadOpen"]){
             [MiniappHUD showLoading:YES];
+        }else if([sEventType isEqualToString:@"nativeEventPopAbled"]){
+            self.fd_interactivePopDisabled = NO;
+        }else if([sEventType isEqualToString:@"nativeEventPopDisabled"]){
+            self.fd_interactivePopDisabled = YES;
         }
     });
 }
