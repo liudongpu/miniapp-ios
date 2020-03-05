@@ -7,7 +7,8 @@
 //
 
 #import "MiniappHUD.h"
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+ 
 @implementation MiniappHUD
 
 + (void)showMessage:(NSString *)message {
@@ -16,11 +17,12 @@
     
     UIView *view = [[UIApplication sharedApplication].windows lastObject];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.label.text = message;
+    
+    hud.labelText = message;
     hud.mode = MBProgressHUDModeText;
     hud.removeFromSuperViewOnHide = YES;
-    hud.backgroundView.color = [UIColor clearColor];
-    [hud hideAnimated:YES afterDelay:1.5];
+    hud.backgroundColor = [UIColor clearColor];
+    [hud hide:YES afterDelay:1.5];
 }
 
 + (void)showLoading:(BOOL)show{
@@ -31,7 +33,7 @@
     for (UIView *subview in subviewsEnum) {
         if ([subview isKindOfClass:[MBProgressHUD class]]) {
             hudView = (MBProgressHUD *)subview;
-            [hudView hideAnimated:YES];
+            [hudView hide:YES];
         }
     }
     

@@ -1,3 +1,10 @@
+# mPaaS Pods Begin
+plugin "cocoapods-mPaaS"
+source "https://code.aliyun.com/mpaas-public/podspecs.git"
+mPaaS_baseline '10.1.60'
+mPaaS_version_code 27   # This line is maintained by MPaaS plugin automatically. Please don't modify.
+
+
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
@@ -48,5 +55,10 @@ target 'miniapp-ios' do
   pod 'SSZipArchive'
   pod 'JSONModel'
   pod 'FDFullscreenPopGesture', '~> 1.1'
-  pod 'MBProgressHUD'
+  #pod 'MBProgressHUD'
+  
+  
+  #小程序
+  mPaaS_pod "mPaaS_TinyApp"
+  
 end

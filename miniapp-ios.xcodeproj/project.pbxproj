@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5441A6E67310A6B3BB5D3634 /* meta.config in Resources */ = {isa = PBXBuildFile; fileRef = 1939BE26DAE975A69248AC7D /* meta.config */; };
+		561EC8437F983BB40EA73628 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9451BD70C01AF117F9D71799 /* DemoViewController.m */; };
+		56C28C3A25C3E5AA89EE5DD8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDFD121CC29D52D546F563D /* CoreTelephony.framework */; };
+		5E20CA36AA3C4FF5D5DA9470 /* MPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA64DBF6EE7B36D788FD3E5 /* MPTabBarController.m */; };
+		624543B6898A521DE67A83BE /* MobileRuntime.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6CA551DE7F6AE8B0389080D /* MobileRuntime.plist */; };
+		8021929673D8E03D040F63E3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCCE80ED95D03FC48D49DC9 /* WebKit.framework */; };
+		87ABC961B046BCDE562A355A /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E1A0C3DC30DECF584854A73 /* yw_1222.jpg */; };
 		920407B222D30FEE000CC6AC /* MiniappEventInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 920407B122D30FEE000CC6AC /* MiniappEventInstance.m */; };
 		921C453322CEEA7E0000BDEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C453222CEEA7E0000BDEA /* AppDelegate.m */; };
 		921C453622CEEA7E0000BDEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921C453522CEEA7E0000BDEA /* ViewController.m */; };
@@ -21,12 +28,29 @@
 		92AAEC9C22D3445A003A3D61 /* MiniappModelUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */; };
 		92EB233E2314D86F0052E6EF /* MiniappNoticeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EB233D2314D86F0052E6EF /* MiniappNoticeBridge.m */; };
 		C2E3B66323138A4000B913EC /* MiniappHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3B66223138A4000B913EC /* MiniappHUD.m */; };
+		C869E417108504B42BC849B3 /* MPaaSInterface+miniapp-ios.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8E9BF8C04D94AC5E2E94B7 /* MPaaSInterface+miniapp-ios.m */; };
+		CDC602815A7521B6E84DF1FF /* MPLauncherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DC0717C272C39F691B4BEA /* MPLauncherAppDelegate.m */; };
+		D8BC678A8E7A50EE04D25036 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AA1D21C408995EE205553E /* CoreMotion.framework */; };
+		E9260398456B08375C6EE607 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA40E01154DD33EF92A55A67 /* MessageUI.framework */; };
 		EB1F2D9A076079100FF91F33 /* libPods-miniapp-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 083AC3C09D7819C0732AEF61 /* libPods-miniapp-ios.a */; };
+		F39BA0DB82CD0604E21CFBD2 /* DTFrameworkInterface+miniapp-ios.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B4148000C8CDACC071A816 /* DTFrameworkInterface+miniapp-ios.m */; };
+		FF313BC4BDD29739A698EF77 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4369DA97C45403C632180903 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06B4148000C8CDACC071A816 /* DTFrameworkInterface+miniapp-ios.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DTFrameworkInterface+miniapp-ios.m"; sourceTree = "<group>"; };
 		083AC3C09D7819C0732AEF61 /* libPods-miniapp-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-miniapp-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113546BC1C1B11C87133502A /* Pods-miniapp-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniapp-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		132DCC1D8BFFF0F43C3F84DB /* MPTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MPTabBarController.h; sourceTree = "<group>"; };
+		1939BE26DAE975A69248AC7D /* meta.config */ = {isa = PBXFileReference; includeInIndex = 1; path = meta.config; sourceTree = "<group>"; };
+		294CE1CA5F595933FBB8CD52 /* miniapp-ios-Prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "miniapp-ios-Prefix.pch"; path = "../../../miniapp-ios/miniapp-ios-Prefix.pch"; sourceTree = "<group>"; };
+		4369DA97C45403C632180903 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		4DDFD121CC29D52D546F563D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		5BA64DBF6EE7B36D788FD3E5 /* MPTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MPTabBarController.m; sourceTree = "<group>"; };
+		7350A18A845076CFC5A38761 /* MPaaSInterface+miniapp-ios.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPaaSInterface+miniapp-ios.h"; sourceTree = "<group>"; };
+		7E1A0C3DC30DECF584854A73 /* yw_1222.jpg */ = {isa = PBXFileReference; includeInIndex = 1; path = yw_1222.jpg; sourceTree = "<group>"; };
+		84AA1D21C408995EE205553E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		8BCCE80ED95D03FC48D49DC9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		920407B022D30FD8000CC6AC /* MiniappEventInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappEventInstance.h; sourceTree = "<group>"; };
 		920407B122D30FEE000CC6AC /* MiniappEventInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappEventInstance.m; sourceTree = "<group>"; };
 		921C452E22CEEA7E0000BDEA /* miniapp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miniapp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,9 +77,18 @@
 		92AAEC9B22D3445A003A3D61 /* MiniappModelUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappModelUser.m; sourceTree = "<group>"; };
 		92EB233D2314D86F0052E6EF /* MiniappNoticeBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappNoticeBridge.m; sourceTree = "<group>"; };
 		92EB233F2314D88A0052E6EF /* MiniappNoticeBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappNoticeBridge.h; sourceTree = "<group>"; };
+		9451BD70C01AF117F9D71799 /* DemoViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		99AAE90961D90A300CC157FF /* MPLauncherAppDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MPLauncherAppDelegate.h; sourceTree = "<group>"; };
+		B0DC0717C272C39F691B4BEA /* MPLauncherAppDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MPLauncherAppDelegate.m; sourceTree = "<group>"; };
+		B74FF5366A858F2D69D9F103 /* DemoViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		B7C180588D9E009734BC8D63 /* Pods-miniapp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniapp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios.release.xcconfig"; sourceTree = "<group>"; };
+		BA40E01154DD33EF92A55A67 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		BD07E67A532E5EE03B938402 /* miniapp-ios-mPaaS-Headers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "miniapp-ios-mPaaS-Headers.h"; sourceTree = "<group>"; };
 		C2E3B66123138A4000B913EC /* MiniappHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniappHUD.h; sourceTree = "<group>"; };
 		C2E3B66223138A4000B913EC /* MiniappHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniappHUD.m; sourceTree = "<group>"; };
+		D6CA551DE7F6AE8B0389080D /* MobileRuntime.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = MobileRuntime.plist; sourceTree = "<group>"; };
+		E10BC97A1972688CC06AD795 /* DTFrameworkInterface+miniapp-ios.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTFrameworkInterface+miniapp-ios.h"; sourceTree = "<group>"; };
+		FC8E9BF8C04D94AC5E2E94B7 /* MPaaSInterface+miniapp-ios.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPaaSInterface+miniapp-ios.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,18 +97,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB1F2D9A076079100FF91F33 /* libPods-miniapp-ios.a in Frameworks */,
+				8021929673D8E03D040F63E3 /* WebKit.framework in Frameworks */,
+				D8BC678A8E7A50EE04D25036 /* CoreMotion.framework in Frameworks */,
+				56C28C3A25C3E5AA89EE5DD8 /* CoreTelephony.framework in Frameworks */,
+				FF313BC4BDD29739A698EF77 /* SystemConfiguration.framework in Frameworks */,
+				E9260398456B08375C6EE607 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07FCFD28CAEF376EAEB47D1D /* miniapp-ios */ = {
+			isa = PBXGroup;
+			children = (
+				1939BE26DAE975A69248AC7D /* meta.config */,
+				7E1A0C3DC30DECF584854A73 /* yw_1222.jpg */,
+				BD07E67A532E5EE03B938402 /* miniapp-ios-mPaaS-Headers.h */,
+				294CE1CA5F595933FBB8CD52 /* miniapp-ios-Prefix.pch */,
+				DBB680102F0C8840E3C9E81F /* mPaas */,
+				89A583A83E6B347219DC487B /* APMobileFramework */,
+			);
+			name = "miniapp-ios";
+			path = "miniapp-ios";
+			sourceTree = "<group>";
+		};
 		1E752A73EAC7AA03FA68D1BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				083AC3C09D7819C0732AEF61 /* libPods-miniapp-ios.a */,
+				2608D3E9B41534B14CF27EBB /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2608D3E9B41534B14CF27EBB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8BCCE80ED95D03FC48D49DC9 /* WebKit.framework */,
+				84AA1D21C408995EE205553E /* CoreMotion.framework */,
+				4DDFD121CC29D52D546F563D /* CoreTelephony.framework */,
+				4369DA97C45403C632180903 /* SystemConfiguration.framework */,
+				BA40E01154DD33EF92A55A67 /* MessageUI.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		893029C47815B030C8A34A79 /* Pods */ = {
@@ -87,6 +152,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		89A583A83E6B347219DC487B /* APMobileFramework */ = {
+			isa = PBXGroup;
+			children = (
+				E10BC97A1972688CC06AD795 /* DTFrameworkInterface+miniapp-ios.h */,
+				06B4148000C8CDACC071A816 /* DTFrameworkInterface+miniapp-ios.m */,
+				D6CA551DE7F6AE8B0389080D /* MobileRuntime.plist */,
+				99AAE90961D90A300CC157FF /* MPLauncherAppDelegate.h */,
+				B0DC0717C272C39F691B4BEA /* MPLauncherAppDelegate.m */,
+				132DCC1D8BFFF0F43C3F84DB /* MPTabBarController.h */,
+				5BA64DBF6EE7B36D788FD3E5 /* MPTabBarController.m */,
+				B74FF5366A858F2D69D9F103 /* DemoViewController.h */,
+				9451BD70C01AF117F9D71799 /* DemoViewController.m */,
+			);
+			name = APMobileFramework;
+			path = APMobileFramework;
+			sourceTree = "<group>";
+		};
 		921C452522CEEA7E0000BDEA = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +176,7 @@
 				921C452F22CEEA7E0000BDEA /* Products */,
 				893029C47815B030C8A34A79 /* Pods */,
 				1E752A73EAC7AA03FA68D1BC /* Frameworks */,
+				ACEF3822C60F7F55A06563E8 /* MPaaS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +230,34 @@
 			path = Miniapp;
 			sourceTree = "<group>";
 		};
+		A97BBAC1843340AF5AB424EC /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				07FCFD28CAEF376EAEB47D1D /* miniapp-ios */,
+			);
+			name = Targets;
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		ACEF3822C60F7F55A06563E8 /* MPaaS */ = {
+			isa = PBXGroup;
+			children = (
+				A97BBAC1843340AF5AB424EC /* Targets */,
+			);
+			name = MPaaS;
+			path = MPaaS;
+			sourceTree = "<group>";
+		};
+		DBB680102F0C8840E3C9E81F /* mPaas */ = {
+			isa = PBXGroup;
+			children = (
+				7350A18A845076CFC5A38761 /* MPaaSInterface+miniapp-ios.h */,
+				FC8E9BF8C04D94AC5E2E94B7 /* MPaaSInterface+miniapp-ios.m */,
+			);
+			name = mPaas;
+			path = mPaas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +270,7 @@
 				921C452B22CEEA7E0000BDEA /* Frameworks */,
 				921C452C22CEEA7E0000BDEA /* Resources */,
 				552C582225E74F7C8610A806 /* [CP] Copy Pods Resources */,
+				C82BCA2BC2769FA5D04EE936 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +320,9 @@
 			files = (
 				921C453B22CEEA800000BDEA /* Assets.xcassets in Resources */,
 				921C453922CEEA7E0000BDEA /* Main.storyboard in Resources */,
+				5441A6E67310A6B3BB5D3634 /* meta.config in Resources */,
+				87ABC961B046BCDE562A355A /* yw_1222.jpg in Resources */,
+				624543B6898A521DE67A83BE /* MobileRuntime.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +364,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C82BCA2BC2769FA5D04EE936 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-miniapp-ios/Pods-miniapp-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,6 +400,11 @@
 				92EB233E2314D86F0052E6EF /* MiniappNoticeBridge.m in Sources */,
 				921C455122CF240A0000BDEA /* MiniappJumpUtil.m in Sources */,
 				921C455A22CF559C0000BDEA /* MiniappManagerBridge.m in Sources */,
+				C869E417108504B42BC849B3 /* MPaaSInterface+miniapp-ios.m in Sources */,
+				F39BA0DB82CD0604E21CFBD2 /* DTFrameworkInterface+miniapp-ios.m in Sources */,
+				CDC602815A7521B6E84DF1FF /* MPLauncherAppDelegate.m in Sources */,
+				5E20CA36AA3C4FF5D5DA9470 /* MPTabBarController.m in Sources */,
+				561EC8437F983BB40EA73628 /* DemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +542,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KNU4GDH57Y;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "miniapp-ios/miniapp-ios-Prefix.pch";
 				INFOPLIST_FILE = "miniapp-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -425,6 +564,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KNU4GDH57Y;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "miniapp-ios/miniapp-ios-Prefix.pch";
 				INFOPLIST_FILE = "miniapp-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

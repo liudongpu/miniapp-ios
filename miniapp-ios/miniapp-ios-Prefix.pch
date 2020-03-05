@@ -1,0 +1,14 @@
+//
+//  miniapp-ios-Prefix.pch
+//  miniapp-ios
+//
+//  Created by srnpr on 2020/03/05.
+
+// MPAAS HEADERS BEGIN
+// This part is maintained by MPaaS plugin automatically. 
+#ifdef __OBJC__
+
+#import "miniapp-ios-mPaaS-Headers.h"
+
+#endif
+// MPAAS HEADERS END
