@@ -1,3 +1,4 @@
+source "https://github.com/CocoaPods/Specs.git"
 # mPaaS Pods Begin
 plugin "cocoapods-mPaaS"
 source "https://code.aliyun.com/mpaas-public/podspecs.git"
