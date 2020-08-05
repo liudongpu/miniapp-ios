@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 target 'miniapp-ios' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -44,7 +45,7 @@ target 'miniapp-ios' do
   
   
   
-  pod 'AFNetworking'
+  pod 'AFNetworking','~> 4.0.0'
   pod 'SSZipArchive'
   pod 'JSONModel'
   pod 'FDFullscreenPopGesture', '~> 1.1'
